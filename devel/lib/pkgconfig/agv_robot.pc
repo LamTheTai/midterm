@@ -1,0 +1,8 @@
+prefix=/home/anhtat/midterm/devel
+
+Name: agv_robot
+Description: Description of agv_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

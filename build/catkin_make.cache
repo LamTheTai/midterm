@@ -1,0 +1,2 @@
+agv_robot:midtermpkg:mobile_robot
+-DCATKIN_DEVEL_PREFIX=/home/anhtat/midterm/devel -DCMAKE_INSTALL_PREFIX=/home/anhtat/midterm/install -G Unix Makefiles

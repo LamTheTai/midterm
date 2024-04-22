@@ -1,0 +1,8 @@
+prefix=/home/anhtat/midterm/install
+
+Name: midtermpkg
+Description: Description of midtermpkg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmidtermpkg
+Requires: roscpp rospy std_msgs

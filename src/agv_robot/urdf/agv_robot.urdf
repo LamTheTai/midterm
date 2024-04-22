@@ -1,0 +1,479 @@
+<robot name="agv_robot">
+
+    <link name="base_footprint"/>
+    
+    <link name="base">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.5 0.4 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_name" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="bar_1">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.08"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_bar_1" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="bar_1"/>
+        <origin xyz="0.24 0.19 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="bar_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.08"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_bar_2" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="bar_2"/>
+        <origin xyz="-0.24 0.19 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="bar_3">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.08"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_bar_3" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="bar_3"/>
+        <origin xyz="-0.24 -0.19 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="bar_4">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.02 0.08"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_bar_4" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="bar_4"/>
+        <origin xyz="0.24 -0.19 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="base_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.6 0.5 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_base_2" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_2"/>
+        <origin xyz="0.0 0.0 0.09" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="wheel_mid_left">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_mid_left" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_mid_left"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 0.21 0" rpy="1.57 0 0"/>
+    </joint>
+    
+    <link name="wheel_mid_right">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_mid_right" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_mid_right"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 -0.21 0" rpy="1.57 0 0"/>
+    </joint>
+    
+    <link name="wheel_front_right_base">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_right_base" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_front_right_base"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0.2 0.15 -0.01" rpy="0 0 0"/>
+    </joint>
+
+    <link name="wheel_front_right_bar_1">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_right_bar_1" type="fixed">
+        <parent link="wheel_front_right_base"/>
+        <child link="wheel_front_right_bar_1"/>
+        <origin xyz="0.0 -0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_front_right_bar_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_right_bar_2" type="fixed">
+        <parent link="wheel_front_right_base"/>
+        <child link="wheel_front_right_bar_2"/>
+        <origin xyz="0.0 0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_front_right">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.015"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_right" type="continuous">
+        <parent link="wheel_front_right_bar_1"/>
+        <child link="wheel_front_right"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 0.01 -0.01" rpy="1.57 0 0"/>
+    </joint>
+
+    <link name="wheel_front_left_base">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_left_base" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_front_left_base"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0.2 -0.15 -0.01" rpy="0 0 0"/>
+    </joint>
+
+    <link name="wheel_front_left_bar_1">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_left_bar_1" type="fixed">
+        <parent link="wheel_front_left_base"/>
+        <child link="wheel_front_left_bar_1"/>
+        <origin xyz="0.0 -0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_front_left_bar_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_left_bar_2" type="fixed">
+        <parent link="wheel_front_left_base"/>
+        <child link="wheel_front_left_bar_2"/>
+        <origin xyz="0.0 0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_front_left">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.015"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_front_left" type="continuous">
+        <parent link="wheel_front_left_bar_1"/>
+        <child link="wheel_front_left"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 0.01 -0.01" rpy="1.57 0 0"/>
+    </joint>
+
+    <link name="wheel_behind_right_base">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_right_base" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_behind_right_base"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="-0.2 0.15 -0.01" rpy="0 0 0"/>
+    </joint>
+
+    <link name="wheel_behind_right_bar_1">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_right_bar_1" type="fixed">
+        <parent link="wheel_behind_right_base"/>
+        <child link="wheel_behind_right_bar_1"/>
+        <origin xyz="0.0 -0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_behind_right_bar_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_right_bar_2" type="fixed">
+        <parent link="wheel_behind_right_base"/>
+        <child link="wheel_behind_right_bar_2"/>
+        <origin xyz="0.0 0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_behind_right">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.015"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_right" type="continuous">
+        <parent link="wheel_behind_right_bar_1"/>
+        <child link="wheel_behind_right"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 0.01 -0.01" rpy="1.57 0 0"/>
+    </joint>
+
+
+    <link name="wheel_behind_left_base">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.03" length="0.01"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_left_base" type="continuous">
+        <parent link="base"/>
+        <child link="wheel_behind_left_base"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="-0.2 -0.15 -0.01" rpy="0 0 0"/>
+    </joint>
+
+    <link name="wheel_behind_left_bar_1">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_left_bar_1" type="fixed">
+        <parent link="wheel_behind_left_base"/>
+        <child link="wheel_behind_left_bar_1"/>
+        <origin xyz="0.0 -0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_behind_left_bar_2">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.02 0.005 0.02"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_left_bar_2" type="fixed">
+        <parent link="wheel_behind_left_base"/>
+        <child link="wheel_behind_left_bar_2"/>
+        <origin xyz="0.0 0.01 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="wheel_behind_left">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.02" length="0.015"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="joint_wheel_behind_left" type="continuous">
+        <parent link="wheel_behind_left_bar_1"/>
+        <child link="wheel_behind_left"/>
+        <axis xyz="0 0 -1"/>
+        <origin xyz="0 0.01 -0.01" rpy="1.57 0 0"/>
+    </joint>
+
+
+
+
+
+
+
+
+</robot>
